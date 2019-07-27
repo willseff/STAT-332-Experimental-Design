@@ -29,3 +29,11 @@ data<-read.table('/Users/will/Documents/GitHub/STAT-332-Experimental-Design/Data
 head(data)
 model<- lm(response~as.factor(subject)+as.factor(angle)+as.factor(width)+as.factor(angle)*as.factor(width), data = data)
 summary(aov(model))
+plot(model)
+interaction.plot(data$angle,data$width,data$response,type ='b',
+                pch=c(19,1), col = 1:2, lty = 1:2, ylab='Average of Sales')
+#Exercise 5
+data<-read.table('/Users/will/Documents/GitHub/STAT-332-Experimental-Design/Data/fac_exercise5.txt', header = TRUE, sep = "", dec = ".")
+attach(data)
+model<- lm(response~ as.factor(dentist)+as.factor(brand)+as.factor(desensization)+as.factor(desensization)*as.factor(brand))
+summary(aov(model))
