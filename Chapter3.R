@@ -1,3 +1,6 @@
+#questions why "as.factor"
+#how to get sum to treatment squares on anova table
+#lm linear model??
 #textbook example 1
 data<-read.table('/Users/will/Documents/GitHub/STAT-332-Experimental-Design/Data/fac_example1.txt', header = TRUE, sep = "", dec = ".")
 summary(aov(data$time~as.factor(data$tt)))
