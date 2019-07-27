@@ -20,6 +20,12 @@ t<-with(data, data.table::rleid(design, condition))
 boxplot(response ~ t, data=data, xlab="Treatment", ylab="Response" )
 summary(aov(data$response~as.factor(t)))
 #there appears to be a difference between treatment effects 
-summary(aov(data$response~data$design+data$condition+data$design*data$condition))
+#interaction plot
 interaction.plot(data$design,data$condition,data$response, type ='b',
                  pch=c(19,1), col = 1:2, lty = 1:2, ylab='Average Response')
+
+#Exercise 3
+data<-read.table('/Users/will/Documents/GitHub/STAT-332-Experimental-Design/Data/fac_exercise3.txt', header = TRUE, sep = "", dec = ".")
+head(data)
+model<- lm(response~as.factor(subject)+as.factor(angle)+as.factor(width)+as.factor(angle)*as.factor(width), data = data)
+summary(aov(model))
