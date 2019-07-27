@@ -1,0 +1,45 @@
+
+MA <- function(y, k) {
+# calculates the moving aveage of y[i] and a single future value
+# using y[i-1], ..., y[i-k]
+
+
+if ( !(k >1 && (k -floor(k) == 0)) ) stop("k must be a postive integer")
+
+n <- length(y) 
+y.star <- numeric(n+1)
+
+  y.star[1] <- NA
+  for (i in 2:(n+1)) {
+    if (k > i) {
+      y.star[i] <- mean(y[1:(i-1)])
+    } else {
+      y.star[i] <- mean(y[(i-k):(i-1)])
+    }
+   
+  }
+
+list(y=y, y.predict=y.star[1:n], y.future=y.star[n+1]) 
+}
+
+
+
+EWMA <- function(y, alpha) {
+# alpha is weight for the model
+# 0 < alpha <=1 
+
+if (!(alpha > 0 && alpha <=1) ) stop("0 < alpha <= 1 does not hold")
+
+n <- length(y)
+y.star <- numeric(n)
+
+  y.star[1] <- NA
+  y.star[2] <- y[1]
+  y.star[3] <- alpha*y[2] + (1-alpha)*y[1]
+  for (t in 3:(n+1)) {
+    y.star[t] <- alpha*y[t-1] + (1-alpha)*y.star[t-1]
+  }
+
+list(y=y, y.predict=y.star[1:n], y.future=y.star[n+1])
+}
+
