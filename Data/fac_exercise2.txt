@@ -1,0 +1,17 @@
+design	condition	response
+new	extreme	1.35
+new	extreme	1.63
+new	extreme	1.43
+new	extreme	1.57
+new	normal	1.27
+new	normal	1.44
+new	normal	1.53
+new	normal	1.40
+old	extreme	2.56
+old	extreme	2.51
+old	extreme	2.22
+old	extreme	2.35
+old	normal	1.45
+old	normal	1.67
+old	normal	1.34
+old	normal	1.47
