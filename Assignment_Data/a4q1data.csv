@@ -1,0 +1,25 @@
+﻿Treatment ,Price,Inflation,Tire Wear Out
+1,cheap,8kPa,0.18
+1,cheap,8kPa,0.19
+1,cheap,8kPa,0.178
+1,cheap,8kPa,0.207
+1,cheap,8kPa,0.192
+1,cheap,8kPa,0.178
+2,cheap,8.3kPa,0.183
+2,cheap,8.3kPa,0.186
+2,cheap,8.3kPa,0.184
+2,cheap,8.3kPa,0.173
+2,cheap,8.3kPa,0.195
+2,cheap,8.3kPa,0.182
+3,expensive,8kPa,0.158
+3,expensive,8kPa,0.139
+3,expensive,8kPa,0.179
+3,expensive,8kPa,0.165
+3,expensive,8kPa,0.165
+3,expensive,8kPa,0.177
+4,expensive,8.3kPa,0.164
+4,expensive,8.3kPa,0.161
+4,expensive,8.3kPa,0.165
+4,expensive,8.3kPa,0.164
+4,expensive,8.3kPa,0.155
+4,expensive,8.3kPa,0.13
