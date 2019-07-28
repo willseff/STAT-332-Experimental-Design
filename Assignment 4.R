@@ -9,12 +9,15 @@ model<-lm(Tire.Wear.Out~as.factor(Price)+as.factor(Inflation)+as.factor(Price)*a
 summary(aov(model))
 model<- lm(Tire.Wear.Out~as.factor(Treatment))
 summary(aov(model))
+pt(0.116,23)
 #(d)
 with(data, tapply(Tire.Wear.Out, list(Price,Inflation), mean))
-sqrt(var(Tire.Wear.Out))
-pt(0.26,23)
+model<- lm(Tire.Wear.Out~as.factor(Treatment))
+summary(aov(model))
+0.0036/(sqrt(0.000143*2/3))
 
-
+1-pt(0.3687,23)
+pt(123,23)
 #Question 2
 data<-read.csv('/Users/will/Documents/GitHub/STAT-332-Experimental-Design/Assignment_Data/Soap2.csv')
 attach(data)
