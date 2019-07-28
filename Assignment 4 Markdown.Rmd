@@ -1,0 +1,57 @@
+---
+title: "Assignment4"
+output: word_document
+---
+
+Question 1
+(a)
+Equation below:
+
+
+
+
+
+(b)
+```{r , echo=FALSE}
+data<-read.csv('/Users/will/Documents/GitHub/STAT-332-Experimental-Design/Assignment_Data/a4q1data.csv')
+attach(data)
+interaction.plot(Price,Inflation,Tire.Wear.Out,type='l',xlab ='Price', ylab='Mean of Tire Wear Out',main='Interaction Plot of Price and Inflation',legend='TRUE')
+```
+
+(c)(i)
+```{r , echo=TRUE}
+data<-read.csv('/Users/will/Documents/GitHub/STAT-332-Experimental-Design/Assignment_Data/a4q1data.csv')
+attach(data)
+model<- lm(Tire.Wear.Out~as.factor(Treatment))
+summary(aov(model))
+```
+
+(ii)
+```{r , echo=TRUE}
+model<-lm(Tire.Wear.Out~as.factor(Price)+as.factor(Inflation)+as.factor(Price)*as.factor(Inflation))
+summary(aov(model))
+```
+
+(d)
+
+
+
+Question 2
+
+(a)
+
+
+
+
+(b)
+
+
+
+(c)
+```{r , echo=TRUE}
+data<-read.csv('/Users/will/Documents/GitHub/STAT-332-Experimental-Design/Assignment_Data/Soap2.csv')
+attach(data)
+model<-lm(Process.capability~as.factor(Moisture.content)+as.factor(Coolant.Temperature)+as.factor(Mixing.Temperature)*as.factor(Coolant.Temperature)+as.factor(Mixing.Temperature)*as.factor(Moisture.content)+as.factor(Coolant.Temperature)*as.factor(Moisture.content))
+summary(aov(model))
+```
+
