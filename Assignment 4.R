@@ -31,6 +31,4 @@ with(data, tapply(Process.capability, list(MixingTemp=Mixing.Temperature,Coolant
 model<-lm(Process.capability~as.factor(Moisture.content)+as.factor(Coolant.Temperature)+as.factor(Mixing.Temperature)*as.factor(Coolant.Temperature)+as.factor(Mixing.Temperature)*as.factor(Moisture.content)+as.factor(Coolant.Temperature)*as.factor(Moisture.content))
 summary(aov(model))
 
-
-
 interaction.plot(Moisture.content,Mixing.Temperature,Process.capability)
