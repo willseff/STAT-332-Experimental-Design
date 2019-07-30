@@ -18,7 +18,8 @@ attach(data)
 interaction.plot(Price,Inflation,Tire.Wear.Out,type='l',xlab ='Price', ylab='Mean of Tire Wear Out',main='Interaction Plot of Price and Inflation',legend='TRUE')
 ```
 
-(c)(i)
+(c)(i)Yes, there is a significant difference between the factor ‘price’ so there is significant difference between the treatments
+
 ```{r , echo=TRUE}
 data<-read.csv('/Users/will/Documents/GitHub/STAT-332-Experimental-Design/Assignment_Data/a4q1data.csv')
 attach(data)
@@ -26,19 +27,22 @@ model<- lm(Tire.Wear.Out~as.factor(Treatment))
 summary(aov(model))
 ```
 
-(ii)
+(ii)	The interaction parameters are not significantly different from zero.
 ```{r , echo=TRUE}
 model<-lm(Tire.Wear.Out~as.factor(Price)+as.factor(Inflation)+as.factor(Price)*as.factor(Inflation))
 summary(aov(model))
 ```
 
 (d)
-
+```{r , echo=TRUE}
+with(data, tapply(Tire.Wear.Out, list(Price,Inflation), mean))
+pt(0.1166,20)
+```
 
 
 Question 2
 
-(a)
+(a)Each soap formulation should be randomly assigned to each treatment
 
 
 
@@ -51,7 +55,9 @@ Question 2
 ```{r , echo=TRUE}
 data<-read.csv('/Users/will/Documents/GitHub/STAT-332-Experimental-Design/Assignment_Data/Soap2.csv')
 attach(data)
-model<-lm(Process.capability~as.factor(Moisture.content)+as.factor(Coolant.Temperature)+as.factor(Mixing.Temperature)*as.factor(Coolant.Temperature)+as.factor(Mixing.Temperature)*as.factor(Moisture.content)+as.factor(Coolant.Temperature)*as.factor(Moisture.content))
+model<-lm(Process.capability~as.factor(Moisture.content)+as.factor(Coolant.Temperature)+as.factor(Mixing.Temperature)*as.factor(Coolant.Temperature))
 summary(aov(model))
 ```
+(i) There is no significant difference among the treatments
+(ii)	There are no interaction parameters significantly different from zero
 
