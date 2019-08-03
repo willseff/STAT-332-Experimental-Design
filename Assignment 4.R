@@ -9,7 +9,7 @@ model<-lm(Tire.Wear.Out~as.factor(Price)+as.factor(Inflation)+as.factor(Price)*a
 summary(aov(model))
 model<- lm(Tire.Wear.Out~as.factor(Treatment))
 summary(aov(model))
-pt(0.116,20)
+2*(1-pt(0.1166,20))
 #(d)
 with(data, tapply(Tire.Wear.Out, list(Price,Inflation), mean))
 model<- lm(Tire.Wear.Out~as.factor(Treatment))
