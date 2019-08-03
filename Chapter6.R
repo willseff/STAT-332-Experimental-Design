@@ -25,3 +25,8 @@ ri
 sigma=sqrt(sum(ri)/(n-1))
 standard_error=sigma*(sqrt((1-f)/n))
 confidence_interval = (ratio_estimate+qnorm(0.975)*standard_error)*1783
+
+#question 5
+data<-read.table('/Users/will/Documents/GitHub/STAT-332-Experimental-Design/Data/water.txt', header = TRUE, sep = "", dec = ".")
+plot(data)
+
